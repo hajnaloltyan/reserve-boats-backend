@@ -15,7 +15,9 @@ RSpec.describe 'users/sessions', type: :request do
         run_test!
       end
     end
+  end
 
+  path '/login' do
     post('create session') do
       response(200, 'successful') do
         tags 'User Login'
@@ -33,9 +35,7 @@ RSpec.describe 'users/sessions', type: :request do
           },
           required: [:user]
         }
-
         let(:user) { { name: 'API Test' } }
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {

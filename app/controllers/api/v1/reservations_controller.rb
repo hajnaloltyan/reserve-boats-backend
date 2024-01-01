@@ -1,16 +1,16 @@
 class Api::V1::ReservationsController < ApplicationController
   def index
-    reservations = Reservation.includes(:boat).all
-
-    render json: { status: 'success', data: reservations }, status: :ok
-  end
-
-  def show
-    reservation = Reservation.find(params[:id])
-
-    render json: { status: 'success', data: reservation }, status: :ok
-  rescue ActiveRecord::RecordNotFound
-    render json: { status: 'error', message: 'Reservation not found' }, status: :not_found
+    user_name = request.headers['Authorization']
+    current_user = User.find_by(name: user_name)
+    if current_user
+      reservations = Reservation.includes(:boat).where(username: current_user.name).order(created_at: :desc)
+      reservations_with_boat_name = reservations.map do |reservation|
+        reservation.attributes.merge(boat_name: reservation.boat.name)
+      end
+      render json: { status: 'success', data: reservations_with_boat_name }, status: :ok
+    else
+      render json: { status: 'error', message: 'User not found' }, status: :not_found
+    end
   end
 
   def create

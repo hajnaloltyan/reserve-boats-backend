@@ -78,7 +78,7 @@ It's an API only RoR project.
 
 The site has 2 separate repositories, this is the Frontend repository.
 
-Link to the [Front End Repository](https://github.com/Felipe-Perez-Ferraro/final_capstone_front)
+Link to the [Front End Repository](https://github.com/hajnaloltyan/reserve-boats-frontend)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,7 +128,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Felipe-Perez-Ferraro/final_capstone_back
+  git clone git@github.com:hajnaloltyan/reserve-boats-frontend.git
 ```
 
 ### Install
@@ -190,7 +190,7 @@ Link for the API Documentation: http://127.0.0.1:3001/api-docs/index.html
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Felipe-Perez-Ferraro/final_capstone_back/issues).
+Feel free to check the [issues page](https://github.com/hajnaloltyan/reserve-boats-frontend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
